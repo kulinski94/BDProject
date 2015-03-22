@@ -10,9 +10,6 @@
 		<config>WebContent/WEB-INF/photos-servlet.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/com/photography/config/service-context.xml</config>
-		<config>src/com/photography/config/security-context.xml</config>
-		<config>src/com/photography/config/dao-context.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
