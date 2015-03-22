@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="photos.base" template="/WEB-INF/templates/default.jsp">
+		<put-attribute name="includes" value=""></put-attribute>
+		<put-attribute name="title" value="Yordan Georgiev Photography"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="home" extends="photos.base">
+		<put-attribute name="title" value="Photos Homepage"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp"></put-attribute>
+	</definition>
+
+	<definition name="photosordered" extends="photos.base">
+		<put-attribute name="title" value="Selected photos"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/photosordered.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="photos" extends="photos.base">
+		<put-attribute name="title" value="Current Photos"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/photos.jsp"></put-attribute>
+	</definition>
+
+	<definition name="login" extends="photos.base">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp"></put-attribute>
+	</definition>
+
+	<definition name="newaccount" extends="photos.base">
+		<put-attribute name="includes"
+			value="/WEB-INF/tiles/newaccountscript.jsp"></put-attribute>
+		<put-attribute name="title" value="Create Account"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/newaccount.jsp"></put-attribute>
+	</definition>
+
+	<definition name="accountcreated" extends="photos.base">
+		<put-attribute name="title" value="Account Created"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/accountcreated.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin" extends="photos.base">
+		<put-attribute name="title" value="Authorised Users Only!"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
+	</definition>
+
+	<definition name="denied" extends="photos.base">
+		<put-attribute name="title" value="Access Denied"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/denied.jsp"></put-attribute>
+	</definition>
+
+	<definition name="error" extends="photos.base">
+		<put-attribute name="title" value="Error"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/error.jsp"></put-attribute>
+	</definition>
+
+
+	<definition name="loggedout" extends="photos.base">
+		<put-attribute name="title" value="Logged Out"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/loggedout.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="newalbum" extends="photos.base">
+		<put-attribute name="title" value="Add new album"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/newalbum.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="albumuploaded" extends="photos.base">
+		<put-attribute name="title" value="Success upload"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/albumuploaded.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="selectuser" extends="photos.base">
+		<put-attribute name="title" value="Select user"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/selectuser.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="contact" extends="photos.base">
+		<put-attribute name="title" value="Send message"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/contact.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="messagesent" extends="photos.base">
+		<put-attribute name="title" value="Message has been sent"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/messagesent.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="messages" extends="photos.base">
+		<put-attribute name="title" value="Your messages"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/messages.jsp"></put-attribute>
+	</definition>
+	
+		<definition name="selectphotos" extends="photos.base">
+		<put-attribute name="title" value="Select photos"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/selectphotos.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="photosordered" extends="photos.base">
+		<put-attribute name="title" value="Photos ordered"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/photosordered.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>
+
+
+
+
+
+
