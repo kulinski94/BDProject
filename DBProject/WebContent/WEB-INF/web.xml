@@ -17,9 +17,9 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-		classpath:com/photography/config/dao-context.xml
-		classpath:com/photography/config/service-context.xml
-		classpath:com/photography/config/security-context.xml
+		classpath:com/dealers/application/config/dao-context.xml
+		classpath:com/dealers/application/config/service-context.xml
+		classpath:com/dealers/application/config/security-context.xml
 		</param-value>
   </context-param>
   <description>Spring Database</description>

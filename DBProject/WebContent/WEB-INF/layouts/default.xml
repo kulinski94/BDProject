@@ -22,9 +22,9 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/photosordered.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="photos" extends="photos.base">
+	<definition name="products" extends="photos.base">
 		<put-attribute name="title" value="Current Photos"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/photos.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/products.jsp"></put-attribute>
 	</definition>
 
 	<definition name="login" extends="photos.base">
@@ -78,9 +78,9 @@
 	</definition>
 	
 	
-	<definition name="selectuser" extends="photos.base">
+	<definition name="selectproduct" extends="photos.base">
 		<put-attribute name="title" value="Select user"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/selectuser.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/selectproduct.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="contact" extends="photos.base">

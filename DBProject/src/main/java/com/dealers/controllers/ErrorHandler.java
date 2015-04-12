@@ -18,4 +18,9 @@ public class ErrorHandler {
 	public String handleAccessException(AccessDeniedException ex) {
 		return "denied";
 	}
+	
+	@ExceptionHandler(Throwable.class)
+	public String handleAllExceptions(AccessDeniedException ex) {
+		return "error";
+	}
 }

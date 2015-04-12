@@ -7,7 +7,7 @@
 <div id="templatemo_menu">
 	<ul>
 		<li><a href="<c:url value='/'/>">Home</a></li>
-		<li><a class="title" href="<c:url value='/photos'/>">Photos</a></li>
+		<li><a class="title" href="<c:url value='/products'/>">Products</a></li>
 		<li><sec:authorize access="hasRole('ROLE_ADMIN')">
 				<a class="login" href="<c:url value='/messages'/>">See messages</a>
 			</sec:authorize> <sec:authorize access="!hasRole('ROLE_ADMIN')">
@@ -15,8 +15,7 @@
 			</sec:authorize>
 		
 		<li><sec:authorize access="hasRole('ROLE_ADMIN')">
-				<a class="Upload album" href="<c:url value='/newalbum'/>">Upload
-					album</a>
+				<a class="Upload album" href="<c:url value='/newalbum'/>">Add offer</a>
 			</sec:authorize><li><sec:authorize access="isAuthenticated()">
 				<a class="login" href="<c:url value='/j_spring_security_logout'/>">Log
 					out</a>
