@@ -1,8 +1,10 @@
 package com.dealers.service;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,19 +28,14 @@ public class ProductService
 		return false;
 	}
 	
-	public List<Product> getProductsByDealer(String dealerName) {
-		return productDao.getProductsByDealer(dealerName);
-	}
-
 	public Map<Product, Integer> getAllProductsOffers()
 	{
-		Map<Product, Integer> productOffers = new HashMap<>();
-		List<Product> allProducts = getAllProducts();
-		for (Product product : allProducts)
+		Collection<Map.Entry<Product, Integer>> productsOffers = productDao.getAllProductsWithOffersCount();
+		Map<Product, Integer> productsMap = new HashMap<Product, Integer>();
+		for (Entry<Product, Integer> entry : productsOffers)
 		{
-			int countOffers = productDao.getOffersCount(product.getId());
-			productOffers.put(product, countOffers);
+			productsMap.put(entry.getKey(), entry.getValue());
 		}
-		return productOffers;
+		return productsMap;
 	}
 }
