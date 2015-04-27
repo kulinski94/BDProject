@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dealers.domain.Offer;
 import com.dealers.domain.Product;
 import com.dealers.domain.dao.OfferDao;
 
@@ -16,6 +17,11 @@ public class OfferService
 
 	public List<Product> getOffersByDealer(int dealerID) {
 		return offerDao.getOffersByDealer(dealerID);
+	}
+
+	public List<Offer> getOffersForProduct(int productId)
+	{
+		return offerDao.getOffersForProduct(productId);
 	}
 	
 }

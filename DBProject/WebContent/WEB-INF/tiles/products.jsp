@@ -17,9 +17,8 @@ All PRODUCTS
 		</tr>
 		<c:forEach var="entry" items="${products}">
 			<tr>
-				<td><c:out value="${entry.key.id}"></c:out></td>
 				<td><img src="${entry.key.photoUrl}" height="300" width="300"></td>
-				<td><c:out value="${entry.value} offers"> </c:out></td>
+				<td><a href="<c:url value='/productoffers?productId=${entry.key.id}'/>">See ${entry.value} offers</a></option></td>
 			</tr>
 		</c:forEach>
 	</table>

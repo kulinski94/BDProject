@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dealers.dao.User;
 import com.dealers.dao.UsernameValidationGroup;
@@ -17,14 +18,24 @@ public class OffersController
 {
 	@Autowired
 	private OfferService service;
-	
-	@RequestMapping(value = "/dealerproducts",method=RequestMethod.POST)
-	public String showPhotos(Model model,@Validated(UsernameValidationGroup.class) User user,BindingResult result) {
-		if(result.hasErrors())
+
+	@RequestMapping(value = "/dealeroffers", method = RequestMethod.POST)
+	public String showOffersForDealer(Model model,
+			@Validated(UsernameValidationGroup.class) User user,
+			BindingResult result)
+	{
+		if (result.hasErrors())
 		{
 			return "selectdealer";
 		}
-		model.addAttribute("products", service.getOffersByDealer(5));
-		return "products";
+		model.addAttribute("offers", service.getOffersByDealer(5));
+		return "offers";
+	}
+
+	@RequestMapping(value = "/productoffers", method = RequestMethod.GET)
+	public String showOffersForProducts(@RequestParam int productId, Model model)
+	{
+		model.addAttribute("offers", service.getOffersForProduct(productId));
+		return "offers";
 	}
 }

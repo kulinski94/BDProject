@@ -1,6 +1,7 @@
 @CHARSET "US-ASCII";
 
 .formtable {
+	position : center
 	width: 600px;
 	padding: 10px;
 	border: 1px solid blue;
@@ -42,7 +43,13 @@ textarea {
 	margin-left: 10px;
 }
 
-table.photos {
+.products {
+	position : center
+	padding: 20px;
+	border: 1px solid gray;
+}
+
+.offers {
 	position : center
 	padding: 20px;
 	border: 1px solid gray;

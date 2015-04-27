@@ -33,6 +33,8 @@
 
 		<security:intercept-url pattern="/submitphotos"
 			access="isAuthenticated()" />
+		<security:intercept-url pattern="/productoffers"
+			access="isAuthenticated()" />
 		<security:intercept-url pattern="/photosordered"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/products"

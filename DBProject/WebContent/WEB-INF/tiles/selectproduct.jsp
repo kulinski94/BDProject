@@ -8,7 +8,7 @@
 	action="${pageContext.request.contextPath}/userphotos"
 	commandName="product">
 
-	<table class="formtable">
+	<table class="products">
 		<tr>
 			<td class="label">Product:</td>
 			<td><sf:select class="control" path="name">

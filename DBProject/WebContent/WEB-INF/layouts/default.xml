@@ -16,6 +16,11 @@
 		<put-attribute name="title" value="Photos Homepage"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="offers" extends="photos.base">
+		<put-attribute name="title" value="Offers for product"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/offers.jsp"></put-attribute>
+	</definition>
 
 	<definition name="photosordered" extends="photos.base">
 		<put-attribute name="title" value="Selected photos"></put-attribute>
