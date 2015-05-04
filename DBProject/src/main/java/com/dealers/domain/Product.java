@@ -7,9 +7,12 @@ public class Product
 	private String photoUrl;
 	
 	private String name;
+	
+	private Category category;
 
-	public Product(long id, String photoUrl, String name)
+	public Product(long id, String photoUrl, String name, Category category)
 	{
+		this.category = category;
 		this.id = id;
 		this.photoUrl = photoUrl;
 		this.name = name;
@@ -17,6 +20,11 @@ public class Product
 
 	public Product()
 	{
+	}
+
+	public Category getCategory()
+	{
+		return category;
 	}
 
 	public long getId()

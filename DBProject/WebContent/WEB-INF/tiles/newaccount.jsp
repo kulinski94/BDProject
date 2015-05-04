@@ -3,58 +3,47 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
+<div class="container">
 	<h2>Create New Account</h2>
-
-	<sf:form id="details" method="post"
+	<sf:form id="details" role="form"
 		action="${pageContext.request.contextPath}/createaccount"
-		commandName="user">
-
-		<table class="formtable">
-			<tr>
-				<td class="label">Username:</td>
-				<td><sf:input class="control" path="username" name="username"
-						type="text" /><br />
-				<div class="error">
-						<sf:errors path="username"></sf:errors>
-					</div></td>
-			</tr>
-				<tr>
-				<td class="label">Name:</td>
-				<td><sf:input class="control" path="name" name="name"
-						type="text" /><br />
-				<div class="error">
-						<sf:errors path="name"></sf:errors>
-					</div></td>
-			</tr>
-			<tr>
-				<td class="label">Email:</td>
-				<td><sf:input class="control" path="email" name="email"
-						type="text" />
-					<div class="error">
-						<sf:errors path="email"></sf:errors>
-					</div></td>
-			</tr>
-			<tr>
-				<td class="label">Password:</td>
-				<td><sf:input id="password" class="control" path="password"
-						name="password" type="password" />
-					<div class="error">
-						<sf:errors path="password"></sf:errors>
-					</div></td>
-			</tr>
-			<tr>
-				<td class="label">Confirm Password:</td>
-				<td><input id="confirmpass" class="control" name="confirmpass"
-					type="password" />
-				<div id="matchpass"></div></td>
-			</tr>
-			<tr>
-				<td class="label"></td>
-				<td><input class="control" value="Create account" type="submit" /></td>
-			</tr>
-		</table>
-
+		method='POST' commandName="user">
+		<div class="form-group">
+			<label for="username">Username:</label>
+			<sf:input class="form-control" path="username" name="username"
+				type="text" />
+			<div class="form-group">
+				<sf:errors path="username"></sf:errors>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<sf:input class="form-control" path="name" name="name" type="text" />
+			<div class="form-group">
+				<sf:errors path="name"></sf:errors>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<sf:input class="form-control" path="email" name="email" type="text" />
+			<div class="form-group">
+				<sf:errors path="email"></sf:errors>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password">Password:</label>
+			<sf:input id="password" class="form-control" path="password"
+				name="password" type="password" />
+			<div class="form-group">
+				<sf:errors path="password"></sf:errors>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="confirmpass">Confirm Password:</label> <input
+				id="confirmpass" class="form-control" name="confirmpass"
+				type="password" />
+			<div id="matchpass"></div>
+		</div>
+		<button type="submit" class="btn btn-default">Register</button>
 	</sf:form>
-
-</body>
+</div>

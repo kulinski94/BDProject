@@ -21,7 +21,7 @@ public class OfferRowMapper implements RowMapper<Offer>
 		String dealerName = set.getString("dealerName");
 		BigDecimal price = set.getBigDecimal("price");
 		BigDecimal deliveryCost = set.getBigDecimal("delivery_cost");
-		Product product = new Product(productId, null, productName);
+		Product product = new Product(productId, null, productName,null);
 		Dealer dealer = new Dealer(dealerId, dealerName, null, deliveryCost);
 		return new Offer(product, dealer, price);
 	}

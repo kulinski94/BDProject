@@ -18,6 +18,8 @@
 
 	<security:http use-expressions="true">
 
+	    <security:intercept-url pattern="/login"
+			access="permitAll" />
 		<security:intercept-url pattern="/newalbum"
 			access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/uploadalbum"
@@ -38,6 +40,8 @@
 		<security:intercept-url pattern="/photosordered"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/products"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/products/*"
 			access="isAuthenticated()" />
 
 		<security:intercept-url pattern="/login"
@@ -65,6 +69,9 @@
 		<security:intercept-url pattern="/static/**"
 			access="permitAll" />
 		<security:intercept-url pattern="/static/**"
+			access="permitAll" />
+		
+		<security:intercept-url pattern="/***"
 			access="permitAll" />
 
 		<security:intercept-url pattern="/**" access="denyAll" />
