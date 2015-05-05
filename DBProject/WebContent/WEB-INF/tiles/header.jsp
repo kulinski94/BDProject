@@ -29,8 +29,8 @@
 						<a class="login" href="<c:url value='/contact'/>">Contact us</a>
 					</sec:authorize>
 				<li><sec:authorize access="hasRole('ROLE_ADMIN')">
-						<a class="Upload album" href="<c:url value='/newalbum'/>">Add
-							offer</a>
+						<a class="Upload product" href="<c:url value='/addProduct'/>">Add
+							product</a>
 					</sec:authorize>
 				<li><sec:authorize access="isAuthenticated()">
 						<a class="login" href="<c:url value='/j_spring_security_logout'/>">Log

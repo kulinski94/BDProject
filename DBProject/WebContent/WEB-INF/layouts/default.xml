@@ -17,24 +17,29 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="donedeal" extends="photos.base">
+		<put-attribute name="title" value="Photos Homepage"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/donedeal.jsp"></put-attribute>
+	</definition>
+	
 	<definition name="offers" extends="photos.base">
 		<put-attribute name="title" value="Offers for product"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/offers.jsp"></put-attribute>
 	</definition>
 
-	<definition name="photosordered" extends="photos.base">
-		<put-attribute name="title" value="Selected photos"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/tiles/photosordered.jsp"></put-attribute>
-	</definition>
-	
 	<definition name="products" extends="photos.base">
-		<put-attribute name="title" value="Current Photos"></put-attribute>
+		<put-attribute name="title" value="Current products"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/products.jsp"></put-attribute>
 	</definition>
 
 	<definition name="login" extends="photos.base">
 		<put-attribute name="title" value="Login"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="addProduct" extends="photos.base">
+		<put-attribute name="title" value="ADD PRODUCT"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/addProduct.jsp"></put-attribute>
 	</definition>
 
 	<definition name="newaccount" extends="photos.base">

@@ -3,36 +3,51 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<c:if test="${offers.size() == 0}">
-	Has no offers
+<div class="container">
+	<c:if test="${offers.size() == 0}">
+		<h2>NO OFFERS FOR THIS PRODUCT</h2>
 	</c:if>
-<c:if test="${offers.size() > 0}">
-All OFFERS 
-	<form name="buyProduct" action="<c:url value='/productoffers'/>" method="get">
-		<table class="offers">
-			<tr>
-				<td>productName</td>
-				<td>productPrice</td>
-				<td>DealerName</td>
-				<td>DeliveryCost</td>
-			</tr>
+	<c:if test="${offers.size() > 0}">
+		<div class="container">
+			<h2>All OFFERS</h2>
+			<form role="form" name="buyOffer"
+				action="${pageContext.request.contextPath}/buyOffer" method="GET">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>productName</th>
+							<th>productPrice</th>
+							<th>DealerName</th>
+							<th>DeliveryCost</th>
+							<th>Total price</th>
+						</tr>
+					</thead>
+					<tbody>
 
-			<c:forEach var="offer" items="${offers}">
-				<tr>
-					<td><c:out value="${offer.product.name}"></c:out></td>
-					<td><c:out value="${offer.price}"></c:out></td>
-					<td><c:out value="${offer.dealer.name}"></c:out></td>
-					<td><c:out value="${offer.dealer.deliveryCost}"></c:out></td>
-					<td><c:out value="${offer.dealer.deliveryCost}"></c:out></td>
+						<c:forEach var="offer" items="${offers}">
+							<tr>
 
-					<td><button type="submit"  name="dealerId" value="${offer.dealer.id}">Buy Me!</button></td>
+								<td><c:out value="${offer.product.name} "></c:out></td>
+								<td><c:out value="${offer.price}"></c:out> <span
+									class="glyphicon glyphicon-euro"></span></td>
 
-				</tr>
-			</c:forEach>
+								<td><c:out value="${offer.dealer.name}"></c:out></td>
+								<td><c:out value="${offer.dealer.deliveryCost}"></c:out><span
+									class="glyphicon glyphicon-euro"></span></td>
+								<td><c:out
+										value="${offer.dealer.deliveryCost + offer.price}"></c:out><span
+									class="glyphicon glyphicon-euro"></span></td>
+								<td><input type="radio" name="dealerId"
+									value="${offer.dealer.id}"></td>
+							</tr>
 
-		</table>
-	</form>
-</c:if>
-</body>
+						</c:forEach>
+					</tbody>
+				</table>
+				<input type="hidden" name="productId" value="${offers[0].product.id}">
+				<input type="submit" value="Accept offer">
+			</form>
+		</div>
+
+	</c:if>
+</div>

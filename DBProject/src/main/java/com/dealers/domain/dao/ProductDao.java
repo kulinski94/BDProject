@@ -36,6 +36,24 @@ public class ProductDao extends NamedParameterJdbcDaoSupport
 
 	public void saveNewProduct(Product product)
 	{
+		String sql = "" 
+				+ "INSERT INTO "
+				+ "    products "
+				+ "    ("
+				+ "    name,"
+				+ "    photo,"
+				+ "    category ) "
+				+ "VALUES "
+				+ "	   ("
+				+ "    :name, "
+				+ "    :photo,"
+				+ "    :category) ";
+		Map<String, Object> params = new HashMap<>();
+		params.put("name", product.getName());
+		params.put("photo", product.getPhotoUrl());
+		params.put("category", product.getCategory().toString());
+
+		getNamedParameterJdbcTemplate().update(sql, params);
 	}
 
 	public Integer getProductOffersCount(long id)

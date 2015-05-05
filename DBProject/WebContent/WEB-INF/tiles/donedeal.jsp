@@ -1,2 +1,2 @@
 
-The deal has been done!
+The operation has been done!

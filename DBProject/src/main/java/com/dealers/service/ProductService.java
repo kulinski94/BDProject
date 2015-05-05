@@ -52,4 +52,9 @@ public class ProductService
 		}
 		return productsMap;
 	}
+
+	public void saveProduct(Product product)
+	{
+		productDao.saveNewProduct(product);
+	}
 }

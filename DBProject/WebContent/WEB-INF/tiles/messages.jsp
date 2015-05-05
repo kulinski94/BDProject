@@ -4,24 +4,36 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
-<body>
-	<table class="photos">
-		<tr>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Subject</td>
-			<td>Text</td>
-		</tr>
+<div class="container">
+	<c:if test="${messages.size() == 0}">
+		<h2>NO Messages</h2>
+	</c:if>
+	<c:if test="${messages.size() > 0}">
+		<div class="container">
+			<h2>All MESSAGES</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>NAME</th>
+						<th>EMAIL</th>
+						<th>SUBJECT</th>
+						<th>TEXT</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="message" items="${messages}">
+						<tr>
+							<td>${message.name}</td>
+							<td>${message.email}</td>
+							<td>${message.subject}</td>
+							<td>${message.content}</td>
 
-		<c:forEach var="message" items="${messages}">
-			<tr>
-				<td>${message.name}</td>
-				<td>${message.email}</td>
-				<td>${message.subject}</td>
-				<td>${message.content}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 
-			</tr>
-		</c:forEach>
-	</table>
-	<c:forEach var="message" items="${messages}"></c:forEach>
-</body>
+	</c:if>
+</div>
+

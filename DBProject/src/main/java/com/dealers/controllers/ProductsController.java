@@ -6,9 +6,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dealers.dao.FormValidationGroup;
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
 import com.dealers.service.ProductService;
@@ -37,17 +41,16 @@ public class ProductsController {
 			return "products";
 	}
 	
-
+	@RequestMapping(value="/addProduct",method=RequestMethod.GET)
+	public String addProduct(Model model){
+		model.addAttribute("product", new Product());
+		return "addProduct";
+	}
 	
-//	@RequestMapping(value = "/submitphotos",method=RequestMethod.POST)
-//	public String submitPhotos(Model model,@Validated(FormValidationGroup.class) Order order,BindingResult result) {
-//		if(result.hasErrors()){
-//			return "selectphotos";
-//		}
-//		productService.selectProduct(order.getSelectedIds());
-//		System.out.println(order);
-//		return "photosordered";
-//	}
-	
-	
+	@RequestMapping(value="/addProduct")
+	public String saveProduct(Model model,@Validated(FormValidationGroup.class) Product product,BindingResult result){
+		System.out.println(product);
+		productService.saveProduct(product);
+		return "donedeal";
+	}
 }

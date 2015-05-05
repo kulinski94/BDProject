@@ -10,6 +10,10 @@ public class Offer
 
 	private BigDecimal price;
 
+	public Offer()
+	{
+	}
+
 	public Offer(Product product, Dealer dealer, BigDecimal price)
 	{
 		this.product = product;
@@ -30,6 +34,13 @@ public class Offer
 	public BigDecimal getPrice()
 	{
 		return price;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Offer [product=" + product + ", dealer=" + dealer + ", price="
+				+ price + "]";
 	}
 
 }

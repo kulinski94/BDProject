@@ -42,11 +42,33 @@ public class Product
 		return name;
 	}
 	
+	
+	public void setId(long id)
+	{
+		this.id = id;
+	}
+
+	public void setPhotoUrl(String photoUrl)
+	{
+		this.photoUrl = photoUrl;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public void setCategory(String category)
+	{
+		this.category = Category.valueOf(category);
+	}
+
 	@Override
 	public String toString()
 	{
 		return "Product [id=" + id + ", photoUrl=" + photoUrl + ", name="
-				+ name + "]";
+				+ name + ", category=" + category + "]";
 	}
+
 	
 }

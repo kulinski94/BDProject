@@ -14,7 +14,7 @@ public class OfferService
 {
 	@Autowired
 	private OfferDao offerDao;
-
+	
 	public List<Product> getOffersByDealer(int dealerID) {
 		return offerDao.getOffersByDealer(dealerID);
 	}
@@ -22,6 +22,11 @@ public class OfferService
 	public List<Offer> getOffersForProduct(int productId)
 	{
 		return offerDao.getOffersForProduct(productId);
+	}
+
+	public void makeDeal(int dealerId, int productId, String name)
+	{
+		offerDao.makeDeal(dealerId,productId,name);
 	}
 	
 }
