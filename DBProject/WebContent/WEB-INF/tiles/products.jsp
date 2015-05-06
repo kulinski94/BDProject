@@ -26,7 +26,7 @@
 				<c:forEach var="entry" items="${products}">
 					<div class="col-sm-4 col-lg-4 col-md-4">
 						<div class="thumbnail">
-							<img src="${entry.key.photoUrl}">
+							<img class="thumbnail" src="${entry.key.photoUrl}">
 							<div class="caption">
 								<h4 class="pull-right">
 									<a

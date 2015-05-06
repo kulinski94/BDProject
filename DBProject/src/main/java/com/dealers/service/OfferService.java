@@ -24,9 +24,4 @@ public class OfferService
 		return offerDao.getOffersForProduct(productId);
 	}
 
-	public void makeDeal(int dealerId, int productId, String name)
-	{
-		offerDao.makeDeal(dealerId,productId,name);
-	}
-	
 }
