@@ -53,4 +53,26 @@ public class OfferDao extends NamedParameterJdbcDaoSupport
 		params.put("id", productId);
 		return getNamedParameterJdbcTemplate().query(sql, params, new OfferRowMapper());
 	}
+
+	public void saveOffer(Offer offer)
+	{
+		String sql = "" 
+				+ "INSERT INTO "
+				+ "    offers "
+				+ "    ("
+				+ "    dealer_id,"
+				+ "    product_id,"
+				+ "    price ) "
+				+ "VALUES "
+				+ "	   ("
+				+ "    :dealerId, "
+				+ "    :productId,"
+				+ "    :price) ";
+		Map<String, Object> params = new HashMap<>();
+		params.put("dealerId", offer.getDealer().getId());
+		params.put("productId",offer.getProduct().getId());
+		params.put("price", offer.getPrice());
+
+		getNamedParameterJdbcTemplate().update(sql, params);
+	}
 }

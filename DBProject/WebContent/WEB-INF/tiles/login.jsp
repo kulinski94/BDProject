@@ -28,7 +28,7 @@
 			<div class="checkbox">
 				<label><input type="checkbox"> Remember me</label>
 			</div>
-			<button type="submit" class="btn btn-default">Login in</button>
+			<button type="submit" class="btn btn-default">Log in</button>
 			<p>
 				<a href="<c:url value='newaccount'/>">Create new account</a>
 			</p>

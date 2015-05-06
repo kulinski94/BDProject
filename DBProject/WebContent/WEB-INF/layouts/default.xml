@@ -41,6 +41,11 @@
 		<put-attribute name="title" value="ADD PRODUCT"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/addProduct.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="addOffer" extends="photos.base">
+		<put-attribute name="title" value="ADD OFFER"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/addOffer.jsp"></put-attribute>
+	</definition>
 
 	<definition name="newaccount" extends="photos.base">
 		<put-attribute name="includes"
@@ -69,6 +74,10 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/error.jsp"></put-attribute>
 	</definition>
 
+	<definition name="duplicate" extends="photos.base">
+		<put-attribute name="title" value="Duplicate Entry"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/duplicate.jsp"></put-attribute>
+	</definition>
 
 	<definition name="loggedout" extends="photos.base">
 		<put-attribute name="title" value="Logged Out"></put-attribute>
@@ -81,6 +90,10 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/newalbum.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="deals" extends="photos.base">
+		<put-attribute name="title" value="Deals Report"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/deals.jsp"></put-attribute>
+	</definition>
 	
 	<definition name="albumuploaded" extends="photos.base">
 		<put-attribute name="title" value="Success upload"></put-attribute>

@@ -24,4 +24,9 @@ public class OfferService
 		return offerDao.getOffersForProduct(productId);
 	}
 
+	public void saveOffer(Offer offer)
+	{
+		offerDao.saveOffer(offer);
+	}
+
 }

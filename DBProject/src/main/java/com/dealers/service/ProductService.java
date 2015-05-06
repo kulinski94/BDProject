@@ -24,11 +24,6 @@ public class ProductService
 		return productDao.getAllProducts();
 	}
 
-	public boolean addNewProduct(Product product)
-	{
-		return false;
-	}
-
 	public Map<Product, Integer> getAllProductsOffers()
 	{
 		Collection<Map.Entry<Product, Integer>> productsOffers = productDao

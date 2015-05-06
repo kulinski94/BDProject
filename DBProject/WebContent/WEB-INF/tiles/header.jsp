@@ -27,10 +27,13 @@
 							messages</a>
 					</sec:authorize> <sec:authorize access="!hasRole('ROLE_ADMIN')">
 						<a class="login" href="<c:url value='/contact'/>">Contact us</a>
-					</sec:authorize>
-				<li><sec:authorize access="hasRole('ROLE_ADMIN')">
-						<a class="Upload product" href="<c:url value='/addProduct'/>">Add
-							product</a>
+					</sec:authorize> <sec:authorize access="hasRole('ROLE_ADMIN')">
+						<li><a class="Upload product"
+							href="<c:url value='/addProduct'/>">Add product</a></li>
+						<li><a class="Upload product"
+							href="<c:url value='/addOffer'/>">Add offer</a></li>
+						<li><a class="Upload product"
+							href="<c:url value='/dealsReport'/>">Deals report</a></li>
 					</sec:authorize>
 				<li><sec:authorize access="isAuthenticated()">
 						<a class="login" href="<c:url value='/j_spring_security_logout'/>">Log
@@ -38,11 +41,9 @@
 					</sec:authorize> <sec:authorize access="!isAuthenticated()">
 						<a class="login" href="<c:url value='/login'/>">Log in</a>
 					</sec:authorize></li>
-				</li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container -->
 </nav>
-

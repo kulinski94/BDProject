@@ -12,6 +12,8 @@ public class Offer
 
 	public Offer()
 	{
+		dealer = new Dealer();
+		product = new Product();
 	}
 
 	public Offer(Product product, Dealer dealer, BigDecimal price)
@@ -34,6 +36,41 @@ public class Offer
 	public BigDecimal getPrice()
 	{
 		return price;
+	}
+
+	public void setProduct(Product product)
+	{
+		this.product = product;
+	}
+	
+	public void setProductId(long productId)
+	{
+		this.product.setId(productId);
+	}
+	
+	public void setDealerId(long dealerId)
+	{
+		this.dealer.setId(dealerId);
+	}
+
+	public long getProductId()
+	{
+		return product.getId();
+	}
+
+	public long getDealerId()
+	{
+		return dealer.getId();
+	}
+	
+	public void setDealer(Dealer dealer)
+	{
+		this.dealer = dealer;
+	}
+
+	public void setPrice(BigDecimal price)
+	{
+		this.price = price;
 	}
 
 	@Override

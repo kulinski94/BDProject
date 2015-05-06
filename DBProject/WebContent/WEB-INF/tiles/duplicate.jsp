@@ -1,0 +1,1 @@
+Cannot make this transaction. Duplicate entry in database!

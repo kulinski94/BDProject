@@ -10,8 +10,7 @@
 			<security:jdbc-user-service
 				authorities-by-username-query='select username, authority from users where username = ?'
 				users-by-username-query='select username, password, enabled from users where binary username = ?'
-				data-source-ref="dataSource"
-				id="jdbcUserService" />
+				data-source-ref="dataSource" id="jdbcUserService" />
 			<security:password-encoder ref="passwordEncoder"></security:password-encoder>
 		</security:authentication-provider>
 	</security:authentication-manager>
@@ -30,6 +29,12 @@
 			access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/messages"
 			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/addProduct"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/addOffer"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/dealsReport"
+			access="hasRole('ROLE_ADMIN')" />
 
 		<security:intercept-url pattern="/submitphotos"
 			access="isAuthenticated()" />
@@ -37,13 +42,11 @@
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/photosordered"
 			access="isAuthenticated()" />
-		<security:intercept-url pattern="/buyOffer/*"
-			access="!isAuthenticated()" />
-
+		<security:intercept-url pattern="/buyOffer"
+			access="isAuthenticated()" />
 		<security:intercept-url pattern="/login"
 			access="!isAuthenticated()" />
-		
-		<security:intercept-url pattern="/" access="permitAll" />
+
 		<security:intercept-url pattern="/denied"
 			access="permitAll" />
 		<security:intercept-url pattern="/" access="permitAll" />
@@ -67,9 +70,8 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/static/**"
 			access="permitAll" />
-		
-		<security:intercept-url pattern="/***"
-			access="permitAll" />
+		<security:intercept-url pattern="/***" access="permitAll" />
+		<security:intercept-url pattern="/" access="permitAll" />
 
 
 		<security:form-login login-page="/login"

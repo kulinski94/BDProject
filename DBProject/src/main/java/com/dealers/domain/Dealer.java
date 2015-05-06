@@ -21,6 +21,11 @@ public class Dealer
 		this.deliveryCost = deliveryCost;
 	}
 
+	public Dealer()
+	{
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getId()
 	{
 		return id;
@@ -39,6 +44,26 @@ public class Dealer
 	public BigDecimal getDeliveryCost()
 	{
 		return deliveryCost;
+	}
+
+	public void setId(long id)
+	{
+		this.id = id;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+
+	public void setDeliveryCost(BigDecimal deliveryCost)
+	{
+		this.deliveryCost = deliveryCost;
 	}
 
 	@Override
