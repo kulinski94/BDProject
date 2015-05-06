@@ -2,6 +2,7 @@
 	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
 	<h2>Add Product</h2>
 	<sf:form id="details" role="form"
@@ -23,10 +24,9 @@
 		</div>
 		<div class="form-group">
 			<label for="category">Category:</label>
-			<sf:input class="form-control" path="category" type="text" />
-			<div class="form-group">
-				<sf:errors path="category"></sf:errors>
-			</div>
+			<sf:select class="form-control" path="category">
+				<sf:options items="${categories}" />
+			</sf:select>
 		</div>
 		<button type="submit" class="btn btn-default">Add product</button>
 	</sf:form>

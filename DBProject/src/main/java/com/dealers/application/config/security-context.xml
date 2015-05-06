@@ -8,9 +8,9 @@
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:jdbc-user-service
-				data-source-ref="dataSource"
 				authorities-by-username-query='select username, authority from users where username = ?'
 				users-by-username-query='select username, password, enabled from users where binary username = ?'
+				data-source-ref="dataSource"
 				id="jdbcUserService" />
 			<security:password-encoder ref="passwordEncoder"></security:password-encoder>
 		</security:authentication-provider>
@@ -38,10 +38,6 @@
 		<security:intercept-url pattern="/productoffers"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/photosordered"
-			access="isAuthenticated()" />
-		<security:intercept-url pattern="/products"
-			access="isAuthenticated()" />
-		<security:intercept-url pattern="/products/*"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/buyOffer/*"
 			access="isAuthenticated()" />

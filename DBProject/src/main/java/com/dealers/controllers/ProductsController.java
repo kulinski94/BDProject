@@ -44,6 +44,7 @@ public class ProductsController {
 	@RequestMapping(value="/addProduct",method=RequestMethod.GET)
 	public String addProduct(Model model){
 		model.addAttribute("product", new Product());
+		model.addAttribute("categories", Category.values());
 		return "addProduct";
 	}
 	
