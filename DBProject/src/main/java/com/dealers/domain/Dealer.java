@@ -15,15 +15,19 @@ public class Dealer
 	
 	public Dealer(long id, String name, String address, BigDecimal deliveryCost)
 	{
+		this(name);
 		this.id = id;
-		this.name = name;
 		this.address = address;
 		this.deliveryCost = deliveryCost;
 	}
 
 	public Dealer()
 	{
-		// TODO Auto-generated constructor stub
+	}
+
+	public Dealer(String name)
+	{
+		this.name = name;
 	}
 
 	public long getId()

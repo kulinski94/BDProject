@@ -5,11 +5,26 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <jsp:useBean id="dateValue" class="java.util.Date" />
-
 <div class="container">
+	<div class="well">
+		<div id="datetimepicker1" class="input-append date">
+			<input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input> <span
+				class="add-on"> <i data-time-icon="icon-time"
+				data-date-icon="icon-calendar"> </i>
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$('#datetimepicker1').datetimepicker({
+				language : 'pt-BR'
+			});
+		});
+	</script>
 	<c:if test="${deals.size() == 0}">
 		<h2>NO deals</h2>
 	</c:if>
+
 	<c:if test="${deals.size() > 0}">
 		<div class="container">
 			<h2>All deals</h2>

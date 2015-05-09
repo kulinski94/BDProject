@@ -65,14 +65,58 @@ public class DealsDao extends NamedParameterJdbcDaoSupport
 
 	public List<Deal> getAllDeals()
 	{
-		Deal deal = new Deal();
-		deal.setClient(new User("Tseko", null, null, null, false, null));
-		deal.setDealer(new Dealer(2, "Ivan", "", BigDecimal.ONE));
-		deal.setProduct(new Product(2, "BMW", "BMW",Category.ALCOHOL));
-		deal.setDealId(12);
-		deal.setQuantity(2);
-		deal.setTimestamp(120010012223L);
-		return Collections.singletonList(deal);
+		String sql = ""
+				+ "select deals.id as dealID, deals.username as client, products.name as productName, "
+				+ " dealers.name as dealerName,deals.quantity, deals.date, offers.price "
+				+ "from deals "
+				+ "join products "
+				+ " on deals.product_id = products.id "
+				+ "join dealers "
+				+ " on dealers.id = deals.dealer_id "
+				+ "join offers "
+				+ "on offers.product_id = deals.product_id and offers.dealer_id = deals.dealer_id order by deals.date desc;";
+		
+		return getJdbcTemplate().query(sql,new DealRowMapper());
+	}
+	
+	public List<Deal> getAllDealsByDealerId(int dealerId)
+	{
+		String sql = ""
+				+ "select deals.id as dealID, deals.username as client, products.name as productName, "
+				+ " dealers.name as dealerName,deals.quantity, deals.date, offers.price "
+				+ "from deals "
+				+ "join products "
+				+ " on deals.product_id = products.id "
+				+ "join dealers "
+				+ " on dealers.id = deals.dealer_id "
+				+ "join offers "
+				+ "on offers.product_id = deals.product_id and offers.dealer_id = deals.dealer_id"
+				+ "where deals.dealer_id = :dealerId;";
+		
+		Map<String,Object> params = new HashMap<>();
+		params.put("dealerId", dealerId);
+		
+		return getJdbcTemplate().query(sql,new DealRowMapper());
+	}
+	
+	public List<Deal> getAllDealsByDealerIdFromInPeriod(int dealerId, long from, long to)
+	{
+		String sql = ""
+				+ "select deals.id as dealID, deals.username as client, products.name as productName, "
+				+ " dealers.name as dealerName,deals.quantity, deals.date, offers.price "
+				+ "from deals "
+				+ "join products "
+				+ " on deals.product_id = products.id "
+				+ "join dealers "
+				+ " on dealers.id = deals.dealer_id "
+				+ "join offers "
+				+ "on offers.product_id = deals.product_id and offers.dealer_id = deals.dealer_id"
+				+ "where deals.dealer_id = :dealerId;";
+		
+		Map<String,Object> params = new HashMap<>();
+		params.put("dealerId", dealerId);
+		
+		return getJdbcTemplate().query(sql,new DealRowMapper());
 	}
 
 }
