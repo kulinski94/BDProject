@@ -1,5 +1,6 @@
 package com.dealers.domain.dao;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -19,12 +20,14 @@ public class DealRowMapper implements RowMapper<Deal>
 		Deal deal = new Deal();
 		deal.setClient(new User(rs.getString("client")));
 		deal.setDealId(rs.getLong("dealId"));
-		deal.setQuantity(rs.getInt("quantity"));
+		int quantity = rs.getInt("quantity");
+		deal.setQuantity(quantity);
 		deal.setTimestamp(rs.getTimestamp("date").getTime());
 		Product product = new Product();
 		product.setName(rs.getString("productName"));
 		deal.setProduct(product);
 		deal.setDealer(new Dealer(rs.getString("dealerName")));
+		deal.setSum(rs.getBigDecimal("price").multiply(new BigDecimal(quantity)));
 		
 		return deal;
 	}

@@ -44,8 +44,9 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<input type="hidden" name="productId" value="${offers[0].product.id}">
-				<input type="submit" value="Accept offer">
+				<input type="hidden" name="productId"
+					value="${offers[0].product.id}"> <input type="submit"
+					value="Accept offer">
 			</form>
 		</div>
 

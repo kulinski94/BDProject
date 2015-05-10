@@ -1,5 +1,7 @@
 package com.dealers.domain;
 
+import java.math.BigDecimal;
+
 import com.dealers.dao.User;
 
 public class Deal
@@ -16,6 +18,8 @@ public class Deal
 	private int quantity;
 	
 	private long timestamp;
+	
+	private BigDecimal sum;
 
 	public long getDealId()
 	{
@@ -76,14 +80,25 @@ public class Deal
 	{
 		this.timestamp = timestamp;
 	}
+	
+	public BigDecimal getSum()
+	{
+		return sum;
+	}
+
+	public void setSum(BigDecimal sum)
+	{
+		this.sum = sum;
+	}
 
 	@Override
 	public String toString()
 	{
-		return "Deal [dealId=" + dealId + ", dealer=" + dealer.getName() + ", product="
-				+ product.getName() + ", client=" + client.getUsername() + ", quantity=" + quantity
-				+ ", timestamp=" + timestamp + "]";
+		return "Deal [dealId=" + dealId + ", dealer=" + dealer + ", product=" + product + ", client=" + client
+				+ ", quantity=" + quantity + ", timestamp=" + timestamp + ", sum=" + sum + "]";
 	}
+
+	
 	
 	
 	

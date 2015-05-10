@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.dealers.domain.Deal;
 import com.dealers.domain.Dealer;
+import com.dealers.domain.DealsReportRequest;
 import com.dealers.domain.dao.DealsDao;
 
 @Service
@@ -14,19 +15,24 @@ public class DealsService
 {
 	@Autowired
 	private DealsDao dealerDao;
-	
+
 	public void makeDeal(int dealerId, int productId, String name)
 	{
-		dealerDao.makeDeal(dealerId,productId,name);
+		dealerDao.makeDeal(dealerId, productId, name);
 	}
 
 	public List<Dealer> getAllDealers()
 	{
 		return dealerDao.getAllDealers();
 	}
-	
-	public List<Deal> getAllDeals()
+
+	public List<Deal> getDeals(DealsReportRequest request)
 	{
-		return dealerDao.getAllDeals();
+		int productId = request.getProductId();
+		int dealerId = request.getDealerId();
+		String username = request.getClientUsername();
+		System.out.println(request);
+		return dealerDao.getDeals(dealerId, productId, username);
+
 	}
 }

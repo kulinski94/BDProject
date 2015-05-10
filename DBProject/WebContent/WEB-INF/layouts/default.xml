@@ -92,6 +92,7 @@
 	
 	<definition name="deals" extends="photos.base">
 		<put-attribute name="title" value="Deals Report"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/dealsForm.jsp"></put-attribute>
 		<put-attribute name="content" value="/WEB-INF/tiles/deals.jsp"></put-attribute>
 	</definition>
 	
