@@ -15,6 +15,12 @@ public class ErrorHandler {
 		return "error";
 	}
 	
+	@ExceptionHandler(Exception.class)
+	public String allException(Exception ex) {
+		ex.printStackTrace();
+		return "error";
+	}
+	
 	@ExceptionHandler(AccessDeniedException.class)
 	public String handleAccessException(AccessDeniedException ex) {
 		ex.printStackTrace();
