@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
+import com.dealers.domain.ProductOffersStatistic;
 import com.dealers.domain.dao.ProductDao;
 
 @Service
@@ -21,14 +22,14 @@ public class ProductService
 		return productDao.getAllProducts();
 	}
 
-	public Map<Product, Integer> getAllProductsOffers()
+	public Map<Product, ProductOffersStatistic> getAllProductsOffers()
 	{
 		return productDao.getAllProductsWithOffersCount();
 	}
 
-	public Map<Product, Integer> getAllProductsOffers(Category category)
+	public Map<Product, ProductOffersStatistic> getAllProductsOffers(Category category)
 	{
-		return productDao.getAllProductsWithOffersCountByCategory(category);
+		return productDao.getAllProductsWithOffersStatistics(category);
 	}
 
 	public void saveProduct(Product product)

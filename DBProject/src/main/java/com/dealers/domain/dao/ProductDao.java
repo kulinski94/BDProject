@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
+import com.dealers.domain.ProductOffersStatistic;
 
 @Component("productDao")
 public class ProductDao extends NamedParameterJdbcDaoSupport
@@ -53,14 +54,18 @@ public class ProductDao extends NamedParameterJdbcDaoSupport
 				Integer.class);
 	}
 
-	public Map<Product, Integer> getAllProductsWithOffersCount()
+	public Map<Product, ProductOffersStatistic> getAllProductsWithOffersCount()
 	{
 		String sql = ""
 				+ "SELECT "
-				+ "    id, name,photo,category, COUNT(dealer_id) AS offersCount "
+				+ "    id, name,photo,category, "
+				+ "		COUNT(dealer_id) AS offersCount,"
+				+ "		max(price) as maxPrice, "
+				+ " 	min(price)  as minPrice,"
+				+ "		avg(price) as averagePrice "
 				+ "FROM " + "    products " + "        LEFT JOIN "
 				+ "    offers ON id = product_id " + "GROUP BY id";
-		Map<Product, Integer> productsWithOfferCount = new HashMap<>();
+		Map<Product, ProductOffersStatistic> productsWithOfferCount = new HashMap<>();
 		getNamedParameterJdbcTemplate().query(sql, new RowCallbackHandler()
 		{
 
@@ -70,12 +75,16 @@ public class ProductDao extends NamedParameterJdbcDaoSupport
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
 				String photo = rs.getString("photo");
-				Integer count = rs.getInt("offersCount");
 				String category = rs.getString("category");
 				Product product = new Product(id, photo, name, Category
 						.valueOf(category));
-
-				productsWithOfferCount.put(product, count);
+				
+				ProductOffersStatistic stat = new ProductOffersStatistic();
+				stat.setCount(rs.getInt("offersCount"));
+				stat.setMaxPrice(rs.getBigDecimal("maxPrice"));
+				stat.setMinPrice(rs.getBigDecimal("minPrice"));
+				stat.setAveragePrice(rs.getBigDecimal("averagePrice"));
+				productsWithOfferCount.put(product, stat);
 
 			}
 
@@ -85,19 +94,23 @@ public class ProductDao extends NamedParameterJdbcDaoSupport
 
 	}
 
-	public Map<Product, Integer> getAllProductsWithOffersCountByCategory(
+	public Map<Product, ProductOffersStatistic> getAllProductsWithOffersStatistics(
 			Category category)
 	{
 		String sql = ""
 				+ "SELECT "
-				+ "    id, name,photo,category, COUNT(dealer_id) AS offersCount "
+				+ "    id, name,photo,category, "
+				+ "		COUNT(dealer_id) AS offersCount,"
+				+ "		max(price) as maxPrice, "
+				+ " 	min(price)  as minPrice,"
+				+ "		avg(price) as averagePrice "
 				+ "FROM " + "    products " + "        LEFT JOIN "
 				+ "    offers ON id = product_id where category = :category "
 				+ "GROUP BY id";
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("category", category.name());
 
-		Map<Product, Integer> productsWithOfferCount = new HashMap<>();
+		Map<Product, ProductOffersStatistic> productsWithOfferCount = new HashMap<>();
 		getNamedParameterJdbcTemplate().query(sql, params,new RowCallbackHandler()
 		{
 
@@ -112,7 +125,12 @@ public class ProductDao extends NamedParameterJdbcDaoSupport
 				Product product = new Product(id, photo, name, Category
 						.valueOf(category));
 
-				productsWithOfferCount.put(product, count);
+				ProductOffersStatistic stat = new ProductOffersStatistic();
+				stat.setCount(rs.getInt("offersCount"));
+				stat.setMaxPrice(rs.getBigDecimal("maxPrice"));
+				stat.setMinPrice(rs.getBigDecimal("minPrice"));
+				stat.setAveragePrice(rs.getBigDecimal("averagePrice"));
+				productsWithOfferCount.put(product, stat);
 
 			}
 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.dealers.dao.FormValidationGroup;
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
+import com.dealers.domain.ProductOffersStatistic;
 import com.dealers.service.ProductService;
 
 @Controller
@@ -25,7 +26,7 @@ public class ProductsController {
 
 	@RequestMapping(value = "/products/{category}")
 	public String showOffersByCategory(Model model,Principal principal,@PathVariable Category category) {
-			Map<Product, Integer> productOffers = productService.getAllProductsOffers(category);
+			Map<Product, ProductOffersStatistic> productOffers = productService.getAllProductsOffers(category);
 			
 			model.addAttribute("products", productOffers);
 			model.addAttribute("categories", Category.values());
@@ -34,7 +35,7 @@ public class ProductsController {
 	
 	@RequestMapping(value = "/products")
 	public String showOffers(Model model,Principal principal) {
-			Map<Product, Integer> productOffers = productService.getAllProductsOffers();
+			Map<Product, ProductOffersStatistic> productOffers = productService.getAllProductsOffers();
 			
 			model.addAttribute("products", productOffers);
 			model.addAttribute("categories", Category.values());

@@ -31,12 +31,12 @@
 								<h4 class="pull-right">
 									<a
 										href="<c:url value='/productoffers?productId=${entry.key.id}'/>">See
-										${entry.value} offers</a>
+										${entry.value.count} offers</a>
 								</h4>
-								<h4>
-									${entry.key.name}
-								</h4>
-								<p>Click to see offers for this product from dealers</p>
+								<h4>${entry.key.name}</h4>
+								<p>min price: ${entry.value.minPrice}</p>
+								<p>max price: ${entry.value.maxPrice}</p>
+								<p>average price: ${entry.value.averagePrice}</p>
 							</div>
 
 							<div class="ratings">

@@ -80,7 +80,8 @@ public class DealsDao extends NamedParameterJdbcDaoSupport
 				+ "       AND ( :dealerId <= 0 "
 				+ "              OR deals.dealer_id = :dealerId ) "
 				+ "       AND ( :username IS NULL "
-				+ "              OR deals.username = :username );";
+				+ "              OR deals.username = :username )"
+				+ "order by price desc;";
 		System.out.println(sql);
 		Map<String, Object> params = new HashMap<>();
 		params.put("dealerId", dealerId);
