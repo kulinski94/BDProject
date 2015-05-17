@@ -31,6 +31,6 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename"
-			value="com/photography/messages/messages.properties"></property>
+			value="src.main.resources.messages.properties"></property>
 	</bean>
 </beans>

@@ -32,17 +32,17 @@
 			<property name="hibernateProperties">
 				<props>
 					<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
-					<prop key="javax.persistence.validation.group.pre-persist">com.dealers.dao.PersistenceValidationGroup
+					<prop key="javax.persistence.validation.group.pre-persist">com.dealers.validation.PersistenceValidationGroup
 					</prop>
-					<prop key="javax.persistence.validation.group.pre-update">com.dealers.dao.PersistenceValidationGroup
+					<prop key="javax.persistence.validation.group.pre-update">com.dealers.validation.PersistenceValidationGroup
 					</prop>
-					<prop key="javax.persistence.validation.group.pre-remove">com.dealers.dao.PersistenceValidationGroup
+					<prop key="javax.persistence.validation.group.pre-remove">com.dealers.validation.PersistenceValidationGroup
 					</prop>
 				</props>
 			</property>
 			<property name="packagesToScan">
 				<list>
-					<value>com.dealers.dao</value>
+					<value>com.dealers.db</value>
 				</list>
 			</property>
 		</bean>
