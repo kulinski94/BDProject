@@ -1,4 +1,4 @@
-package com.dealers.dao;
+package com.dealers.domain;
 
 import java.io.Serializable;
 
@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.dealers.validation.FormValidationGroup;
+import com.dealers.validation.PersistenceValidationGroup;
+import com.dealers.validation.UsernameValidationGroup;
 import com.dealers.validation.ValidEmail;
 
 @Entity

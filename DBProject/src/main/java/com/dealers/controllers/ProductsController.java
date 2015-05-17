@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.dealers.dao.FormValidationGroup;
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
 import com.dealers.domain.ProductOffersStatistic;
 import com.dealers.service.ProductService;
+import com.dealers.validation.FormValidationGroup;
 
 @Controller
 public class ProductsController {

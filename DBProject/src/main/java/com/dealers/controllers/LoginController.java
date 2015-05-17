@@ -9,9 +9,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.dealers.dao.FormValidationGroup;
-import com.dealers.dao.User;
+import com.dealers.domain.User;
 import com.dealers.service.UsersService;
+import com.dealers.validation.FormValidationGroup;
 
 @Controller
 public class LoginController {

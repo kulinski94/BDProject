@@ -1,4 +1,4 @@
-package com.dealers.domain.dao;
+package com.dealers.db.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,6 +13,7 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.stereotype.Component;
 
+import com.dealers.db.ProductRowMapper;
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
 import com.dealers.domain.ProductOffersStatistic;

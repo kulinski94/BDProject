@@ -1,4 +1,4 @@
-package com.dealers.domain.dao;
+package com.dealers.db.dao;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import com.dealers.db.OfferRowMapper;
+import com.dealers.db.ProductRowMapper;
 import com.dealers.domain.Offer;
 import com.dealers.domain.Product;
 @Repository

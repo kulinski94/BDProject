@@ -1,4 +1,4 @@
-package com.dealers.domain.dao;
+package com.dealers.db.dao;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -14,6 +14,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import com.dealers.db.DealRowMapper;
 import com.dealers.domain.Deal;
 import com.dealers.domain.Dealer;
 

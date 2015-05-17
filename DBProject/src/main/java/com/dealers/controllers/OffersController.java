@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dealers.dao.FormValidationGroup;
-import com.dealers.dao.User;
-import com.dealers.dao.UsernameValidationGroup;
 import com.dealers.domain.Offer;
+import com.dealers.domain.User;
 import com.dealers.service.DealsService;
 import com.dealers.service.OfferService;
 import com.dealers.service.ProductService;
+import com.dealers.validation.FormValidationGroup;
+import com.dealers.validation.UsernameValidationGroup;
 
 @Controller
 public class OffersController

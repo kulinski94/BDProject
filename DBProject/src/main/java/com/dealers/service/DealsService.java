@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dealers.db.dao.DealsDao;
 import com.dealers.domain.Deal;
 import com.dealers.domain.Dealer;
 import com.dealers.domain.DealsReportRequest;
-import com.dealers.domain.dao.DealsDao;
 
 @Service
 public class DealsService

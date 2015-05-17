@@ -1,4 +1,4 @@
-package com.dealers.domain.dao;
+package com.dealers.db;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.dealers.dao.User;
 import com.dealers.domain.Deal;
 import com.dealers.domain.Dealer;
 import com.dealers.domain.Product;
+import com.dealers.domain.User;
 
 public class DealRowMapper implements RowMapper<Deal>
 {

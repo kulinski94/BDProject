@@ -1,4 +1,4 @@
-package com.dealers.domain.dao;
+package com.dealers.db;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

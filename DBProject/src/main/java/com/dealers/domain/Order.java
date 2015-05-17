@@ -1,9 +1,11 @@
-package com.dealers.dao;
+package com.dealers.domain;
 
 import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
+
+import com.dealers.validation.FormValidationGroup;
 
 public class Order {
 

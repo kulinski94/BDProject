@@ -2,8 +2,6 @@ package com.dealers.domain;
 
 import java.math.BigDecimal;
 
-import com.dealers.dao.User;
-
 public class Deal
 {
 

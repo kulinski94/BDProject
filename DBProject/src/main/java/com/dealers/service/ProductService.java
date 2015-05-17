@@ -6,10 +6,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dealers.db.dao.ProductDao;
 import com.dealers.domain.Category;
 import com.dealers.domain.Product;
 import com.dealers.domain.ProductOffersStatistic;
-import com.dealers.domain.dao.ProductDao;
 
 @Service
 public class ProductService

@@ -1,4 +1,4 @@
-package com.dealers.domain.dao;
+package com.dealers.db;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;

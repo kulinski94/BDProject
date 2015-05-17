@@ -1,4 +1,4 @@
-package com.dealers.dao;
+package com.dealers.db.dao;
 
 import java.util.List;
 
@@ -14,6 +14,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.dealers.domain.User;
 
 
 @Transactional

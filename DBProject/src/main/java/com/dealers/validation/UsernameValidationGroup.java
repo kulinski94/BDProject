@@ -1,4 +1,4 @@
-package com.dealers.dao;
+package com.dealers.validation;
 
 public interface UsernameValidationGroup {
 

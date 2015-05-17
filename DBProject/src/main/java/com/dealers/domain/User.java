@@ -1,4 +1,4 @@
-package com.dealers.dao;
+package com.dealers.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,6 +8,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import com.dealers.validation.FormValidationGroup;
+import com.dealers.validation.PersistenceValidationGroup;
+import com.dealers.validation.UsernameValidationGroup;
 import com.dealers.validation.ValidEmail;
 
 @Entity

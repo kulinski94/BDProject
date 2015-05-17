@@ -9,9 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dealers.dao.FormValidationGroup;
-import com.dealers.dao.Message;
+import com.dealers.domain.Message;
 import com.dealers.service.MessageService;
+import com.dealers.validation.FormValidationGroup;
 
 @Controller
 public class MessagesController {
