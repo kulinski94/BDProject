@@ -8,45 +8,37 @@
 
 <jsp:useBean id="dateValue" class="java.util.Date" />
 <div class="container">
-	<sf:form id="details" role="form"
+	<sf:form class="form-inline" id="details" role="form"
 		action="${pageContext.request.contextPath}/dealsReport" method='POST'
 		commandName="dealsReportRequest">
 		<div class="form-group ">
-			<div class="col-sm-2">
-				<label for="dealer">Dealers:</label>
-				<sf:select class="form-control" path="dealerId">
-					<option value="-1" >any</option>
-					<c:forEach items="${dealers}" var="dealer">
-						<option value="${dealer.id}">${dealer.name}</option>
-					</c:forEach>
-				</sf:select>
-			</div>
+			<label for="dealer">Dealers:</label>
+			<sf:select class="form-control" path="dealerId">
+				<option value="-1">any</option>
+				<c:forEach items="${dealers}" var="dealer">
+					<option value="${dealer.id}">${dealer.name}</option>
+				</c:forEach>
+			</sf:select>
 		</div>
 		<div class="form-group">
-			<div class="col-sm-2">
-				<label for="dealer">Products:</label>
-				<sf:select class="form-control" path="productId">
-					<option value="-1">any</option>
-					<c:forEach items="${products}" var="product">
-						<option value="${product.id}">${product.name}</option>
-					</c:forEach>
-				</sf:select>
-			</div>
+			<label for="dealer">Products:</label>
+			<sf:select class="form-control" path="productId">
+				<option value="-1">any</option>
+				<c:forEach items="${products}" var="product">
+					<option value="${product.id}">${product.name}</option>
+				</c:forEach>
+			</sf:select>
 		</div>
 		<div class="form-group">
-			<div class="col-sm-2">
-				<label for="dealer">Clients:</label>
-				<sf:select class="form-control" path="clientUsername">
-					<option value="">any</option>
-					<c:forEach items="${clients}" var="client">
-						<option value="${client.username}">${client.username}</option>
-					</c:forEach>
-				</sf:select>
-			</div>
+			<label for="dealer">Clients:</label>
+			<sf:select class="form-control" path="clientUsername">
+				<option value="">any</option>
+				<c:forEach items="${clients}" var="client">
+					<option value="${client.username}">${client.username}</option>
+				</c:forEach>
+			</sf:select>
 		</div>
-		<div class="text-right">
-			<button type="submit" class="btn-info btn">See report</button>
-		</div>
+		<button type="submit" class="btn-info btn">See report</button>
 	</sf:form>
 </div>
 
